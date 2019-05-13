@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+isort -rc --check-only isort-test
+if [ $? -ne 0 ]; then
+    echo "[Fail] isort failed"
+    exit 1
+fi
+echo "[Success] isort success"
+
+black -S -l 79 --check isort-test
+if [ $? -ne 0 ]; then
+    echo "[Fail] black failed"
+    exit 1
+fi
+echo "[Success] black success"
+
+pylint src
+if [ $? -ne 0 ]; then
+    echo "[Fail] pylint failed!"
+    exit 1
+fi
+echo "[Success] pylint success!"
+
+pytest
+if [ $? -ne 0 ]; then
+    echo "[Fail] pytest failed"
+    exit
+fi
+echo "[Success] pytest success!"
