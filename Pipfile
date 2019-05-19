@@ -7,11 +7,11 @@ verify_ssl = true
 pytest = "*"
 pylint = "*"
 isort = "*"
-black = "*"
+black = "==19.3b0"
 pytest-cov = "==2.7.1"
+tox = "*"
 
 [packages]
-black = "==19.3b0"
 
 [requires]
 python_version = "3.7"

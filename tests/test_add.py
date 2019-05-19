@@ -2,7 +2,7 @@
 docstring
 """
 
-from src.add_three import add_three
+from addthree.add_three import add_three
 
 def test_add_three():
     """

@@ -7,21 +7,21 @@ if [ $? -ne 0 ]; then
 fi
 echo "[Success] isort success"
 
-black -S -l 79 --check isort-test
+black -S -l 79 --check black-test
 if [ $? -ne 0 ]; then
     echo "[Fail] black failed"
     exit 1
 fi
 echo "[Success] black success"
 
-pylint src
+pylint addthree
 if [ $? -ne 0 ]; then
     echo "[Fail] pylint failed!"
     exit 1
 fi
 echo "[Success] pylint success!"
 
-pytest
+pytest tests
 if [ $? -ne 0 ]; then
     echo "[Fail] pytest failed"
     exit

@@ -10,8 +10,16 @@ matrix:
   - python: '3.6'
     env: TOXENV=lint
 install:
-  - pip install tox codecov
+- pip install tox codecov
 script:
-  - tox -e $TOXENV
+- tox -e $TOXENV
 after_success:
-  - codecov
+- codecov
+deploy:
+  provider: pypi
+  user: test_seunuk
+  password:
+    secure: 2JefEU198apOvwNuiibKGo2vaTr4BsXfKVMchkJABtoIMBx5GR0GZf7sOxGqS/p9SlYoYAmkGj/RijMyABd2epH3guwuQ62whKfSqgzDnZdqC1w12vLk7/zHFlu7M/p4JLJuoKdmFASXpe2bKvAaYrzV5Wnxx/AaugN21RhpZSH07JXroHMNap7pa7KZug5tuEI7yLGiu+1NPO1SNuDdeCv4gtQbUsOtReXJDdeGHaiRReo3rdhGtjREU4a7AAoiqx6exUsvGfeG+7ZE0znJHINpfzjy2suHI0St4We6HecF6a5mbsgk+ZqbCnVn0FHOmK6CXbRFwNjnTZLz+SA/FgozAyGrIxPs/nvXXiRm/JRPakzPlPF9KYiY6BuS/Cd5g0qOn4v2kCes8G6LIMovtyv56MFH0CQdm0uo7XMZQXyAICJae0USj8pbMLjcWI+KVMMpJTHYSVP9aQMf/mSOQLViHSiKfSOUAmMu4kDI8vQ8KMA6maPCRgWNVVJB7dUts7fPreYEwDz6seRD02o9Ms8ih3DggBXv0lE/6NPMQX+F6+/Q+ipoxEV6o5rKP4lulO6ii3mIpvOFbmtRS6it3zwRk2pD27XWW3XDKdRxiLRJMXZ1IbPuJr8ElorXIvafO13NwLIRk27cjlHhAwehi4DETEpwj6Pqx2+/r8U4N1A=
+  on:
+    tags: true
+  distributions: "sdist bdist_wheel"
