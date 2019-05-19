@@ -3,9 +3,17 @@ import re
 
 from setuptools import setup, find_packages
 
+here = os.path.abspath(os.path.dirname(__file__))
+DESCRIPTION = 'Practice deploying to PyPI'
+try:
+    with open(os.path.join(here, 'README.md'), encoding='utf-8') as fp:
+        long_description = '\n' + fp.read()
+except FileNotFoundError:
+    long_description = DESCRIPTION
 
-def read(f):
-    return open(os.path.join(os.path.dirname(__file__), f)).read().strip()
+
+# def read(f):
+#     return open(os.path.join(os.path.dirname(__file__), f)).read().strip()
 
 
 def read_version():
@@ -25,10 +33,10 @@ setup(
     author='test',
     author_email='dltmddnr5' '@' 'naver.com',
     description='Practice deploying to PyPI',
-    long_description='\n\n'.join((read('README.md'), read('CHANGES.md'))),
+    long_description=long_description,
     long_description_content_type='text/markdown',
     license='MIT',
-    version='0.1.0',
+    version=read_version(),
     url='https://github.com/SeungUkLee/travis-practice',
     packages=find_packages(),
     classifiers=[

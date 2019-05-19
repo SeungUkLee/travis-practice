@@ -5,3 +5,7 @@ dist.md
 .pytest_cache/
 
 .tox
+addthree.egg-info
+
+build
+dist
