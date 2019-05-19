@@ -25,7 +25,7 @@ setup(
     author='test',
     author_email='dltmddnr5' '@' 'naver.com',
     description='Practice deploying to PyPI',
-    long_description='\n\n'.join((read('README.rst'), read('CHANGES.txt'))),
+    long_description='\n\n'.join((read('README.md'), read('CHANGES.md'))),
     long_description_content_type='text/markdown',
     license='MIT',
     version='0.1.0',
