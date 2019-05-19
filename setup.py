@@ -30,7 +30,7 @@ setup(
     license='MIT',
     version='0.1.0',
     url='https://github.com/SeungUkLee/travis-practice',
-    packages=find_packages(['addthree']),
+    packages=find_packages(),
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Topic :: Utilities',
